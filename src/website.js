@@ -1,3 +1,6 @@
+import createHome from "./home"
+import createMenu from "./menu"
+import createContact from "./contact"
 
 
 function createHeader(){
@@ -22,37 +25,60 @@ function createNavbar(){
         btnElement.innerText = name[0].toUpperCase() + name.substr(1)
         btnElement.classList.add(`nav-btn`)
         btnElement.classList.add(`nav-${name}`)
-        btnElement.addEventListener('click', activeBtn)
+        btnElement.addEventListener('click', activeSection)
         return btnElement
     }
     const home = createButton('home')
     const menu = createButton('menu')
     const contact = createButton('contact')
 
+    home.classList.add('active')
+
     navBar.append(home, menu, contact)
 
     return navBar
 }
 
-function activeBtn(e){
-    console.log(e.target)
+
+function createMain(){
+    const main = document.createElement('main')
+    main.classList.add('main')
+    const sectionArray = document.querySelectorAll('.nav-btn')
+
+    /*
+    if (sectionBtns[0].classList.contains('active')){
+        main.appendChild(createHome())
+    }
+    else if (sectionBtns[1].classList.contains('active')){
+        //Menu function
+        console.log('home')
+    }
+    else if (sectionBtns[2].classList.contains('active')){
+        console.log('contact')
+    }*/
+    /*console.log(sectionArray[0].classList.contains('active'))*/
+    return main
+}
+
+function activeSection(e){
+    
+    const sectionBtns = document.querySelectorAll('.nav-btn')
+    sectionBtns.forEach(btn => btn.classList.remove('active'))
     const btnSelected = e.target
-    const allBtns = document.querySelectorAll('.nav-btn')
-    allBtns.forEach(btn => btn.classList.remove('active'))
     btnSelected.classList.add('active')
+    console.log(sectionBtns[0].classList.contains('active'))
+
+    createMain()
+
+    //TODO Separar lógica de activar sección y activar clase
+    
 }
 
 function createWebsite(){
     const content = document.querySelector('.content')
-    content.appendChild(createHeader())
-    allBtns.forEach(btn => showContent(btn))
+    content.append(createHeader(), createMain())
 }
 
-function showContent(btn){
-    if (btn.classList.contains('active')){
-        return true
-    }
-}
 
 
 export default createWebsite
