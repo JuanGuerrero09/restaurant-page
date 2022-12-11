@@ -1,4 +1,6 @@
-
+function createContact(){
+    return console.log('contact')
+}
 
 
 
