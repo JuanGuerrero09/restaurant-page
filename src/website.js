@@ -43,33 +43,31 @@ function createNavbar(){
 function createMain(){
     const main = document.createElement('main')
     main.classList.add('main')
-    const sectionArray = document.querySelectorAll('.nav-btn')
-
-    /*
-    if (sectionBtns[0].classList.contains('active')){
-        main.appendChild(createHome())
-    }
-    else if (sectionBtns[1].classList.contains('active')){
-        //Menu function
-        console.log('home')
-    }
-    else if (sectionBtns[2].classList.contains('active')){
-        console.log('contact')
-    }*/
-    /*console.log(sectionArray[0].classList.contains('active'))*/
+    main.appendChild(createHome())   
     return main
 }
 
 function activeSection(e){
-    
+    const main = document.querySelector('main')
     const sectionBtns = document.querySelectorAll('.nav-btn')
     sectionBtns.forEach(btn => btn.classList.remove('active'))
     const btnSelected = e.target
     btnSelected.classList.add('active')
     console.log(sectionBtns[0].classList.contains('active'))
+    
+    main.innerHTML = ''
 
-    createMain()
-
+    if (sectionBtns[0].classList.contains('active')){
+        main.appendChild(createHome())
+    }
+    else if (sectionBtns[1].classList.contains('active')){
+        //Menu function
+        main.appendChild(createMenu())
+    }
+    else if (sectionBtns[2].classList.contains('active')){
+        main.appendChild(createContact())
+    }
+    
     //TODO Separar lógica de activar sección y activar clase
     
 }
