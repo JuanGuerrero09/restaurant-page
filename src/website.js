@@ -25,6 +25,7 @@ function createNavbar(){
         btnElement.innerText = name[0].toUpperCase() + name.substr(1)
         btnElement.classList.add(`nav-btn`)
         btnElement.classList.add(`nav-${name}`)
+
         btnElement.addEventListener('click', activeSection)
         return btnElement
     }
