@@ -25,6 +25,7 @@ function createMenuElement(imageDir, elementName, elementPrice){
     img.src = imageDir
     img.alt = imageDir.split('/')[2]
     img.width = 100
+    img.height = 100
 
     const menuElementName = document.createElement('p')
     menuElementName.innerText = elementName
@@ -56,25 +57,25 @@ function createMenu(){
     menuBody.classList.add('menu-body')
 
     const antipasto = createMenuSection('Antipasto')
-    const crostini = createMenuElement('./images/pizza.jpg', 'Crostini', 6000)
-    const caprese = createMenuElement('./images/pizza.jpg', 'Caprese', 6000)
+    const crostini = createMenuElement('./images/crostini.jpg', 'Crostini', 6000)
+    const caprese = createMenuElement('./images/caprese.jpg', 'Caprese', 6000)
     antipasto.lastChild.append(crostini, caprese)
 
     const lasaña = createMenuSection('Lasaña')
-    const italiana = createMenuElement('./images/pizza.jpg', 'Italiana', 19000)
-    const polloChampiñones = createMenuElement('./images/pizza.jpg', 'Pollo Champiñones', 21000)
-    lasaña.append(italiana, polloChampiñones)
+    const italiana = createMenuElement('./images/italiana.jpg', 'Italiana', 19000)
+    const polloChampiñones = createMenuElement('./images/pollochampiñones.jpg', 'Pollo Champiñones', 21000)
+    lasaña.lastChild.append(italiana, polloChampiñones)
 
     const pasta = createMenuSection('Pasta')
-    const boloñesa = createMenuElement('./images/pizza.jpg', 'Boloñesa', 16000)
-    const carbonara = createMenuElement('./images/pizza.jpg', 'Carbonara', 18000)
-    const pesto = createMenuElement('./images/pizza.jpg', 'Pesto', 18000)
-    pasta.append(boloñesa, carbonara, pesto)
+    const boloñesa = createMenuElement('./images/pastaboloñesa.jpg', 'Boloñesa', 16000)
+    const carbonara = createMenuElement('./images/pastacarbonara.jpg', 'Carbonara', 18000)
+    const pesto = createMenuElement('./images/pastapesto.jpg', 'Pesto', 18000)
+    pasta.lastChild.append(boloñesa, carbonara, pesto)
 
     const panini = createMenuSection('Panini')
-    const clasico = createMenuElement('./images/pizza.jpg', 'Clásico', 14000)
-    const hawaiano = createMenuElement('./images/pizza.jpg', 'Hawaiano', 14000)
-    panini.append(clasico, hawaiano)
+    const clasico = createMenuElement('./images/paniniclasico.jpg', 'Clásico', 14000)
+    const hawaiano = createMenuElement('./images/paninihawaiano.jpg', 'Hawaiano', 14000)
+    panini.lastChild.append(clasico, hawaiano)
 
     menuBody.append(antipasto, lasaña, pasta, panini)
     

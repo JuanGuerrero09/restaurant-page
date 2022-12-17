@@ -73,9 +73,16 @@ function activeSection(e){
     
 }
 
+function createFooter(){
+    const footer = document.createElement('footer')
+    footer.classList.add('footer')
+    footer.innerText = 'JDev'
+    return footer
+}
+
 function createWebsite(){
     const content = document.querySelector('.content')
-    content.append(createHeader(), createMain())
+    content.append(createHeader(), createMain(), createFooter())
 }
 
 
