@@ -7,9 +7,9 @@ function createHome(){
     homeTitle.innerText = "RESTAURANTE ITALIANO \n(Pasta, Lasaña, Panini, Pizza)"
 
     const homeImage = document.createElement('img')
-    homeImage.src = './images/lasaña.jpg'
+    homeImage.src = './images/apprendista-local.jpg'
     homeImage.alt = 'Lasaña con miamor'
-    homeImage.width = 200
+    homeImage.width = 300
 
     const description = document.createElement('p')
     description.innerText = "Un rincón italiano lleno de nuestra esencia, acogedor, buena energia y deliciosa comida casera hecha por italiano¡Visítanos!"
